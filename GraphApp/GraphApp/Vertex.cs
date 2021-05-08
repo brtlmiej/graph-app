@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace GraphApp
 {
+    /// <summary>
+    /// Logical graph vertex representation
+    /// </summary>
     public class Vertex: BaseModel
     {
         public int X { get; set; }
@@ -16,6 +19,11 @@ namespace GraphApp
         {
             Connections = new List<Connection>();
         }
+
+        /// <summary>
+        /// Get all Vertices that are connected to this <c>Vertex</c>
+        /// </summary>
+        /// <returns>List of Vertices</returns>
         public List<Vertex> GetAllNeighbors()
         {
             var neighbors = new List<Vertex>();

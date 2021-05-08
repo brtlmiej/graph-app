@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace GraphApp
 {
+    /// <summary>
+    /// Logical graph connection representation
+    /// </summary>
     public class Connection: BaseModel
     {
         public Vertex Begin { get; set; }
@@ -20,17 +23,17 @@ namespace GraphApp
         /// Check if Connection includes given <c>Vertex</c>
         /// </summary>
         /// <param name="vertex">Vertex to check</param>
-        /// <returns><c>bool</c></returns>
+        /// <returns>true if connection includes given Vertex, otherwise false</returns>
         public bool Includes(Vertex vertex)
         {
             return Begin.Id == vertex.Id || End.Id == vertex.Id;
         }
 
         /// <summary>
-        /// Get neighbor vertex id
+        /// Get neighbor <c>Vertex</c>
         /// </summary>
         /// <param name="vertex">Vertex to check</param>
-        /// <returns>int | null</returns>
+        /// <returns><c>Vertex</c> or null value if connection doesn't include given Vertex</returns>
         public Vertex Neighbor(Vertex vertex)
         {
             if (Begin.Id == vertex.Id)

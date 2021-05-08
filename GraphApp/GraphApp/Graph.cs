@@ -6,31 +6,47 @@ using System.Threading.Tasks;
 
 namespace GraphApp
 {
-    class Graph: BaseModel
+    /// <summary>
+    /// Logical graph representation
+    /// </summary>
+    public class Graph: BaseModel
     {
-        Random randomizer;
         public List<Vertex> Vertices { get; set; }
         public List<Connection> Connections { get; set; }
 
         public Graph(): base()
         {
-            randomizer = new Random();
+            Vertices = new List<Vertex>();
+            Connections = new List<Connection>();
         }
-
+        /// <summary>
+        /// Find <c>Vertex</c> by given id
+        /// </summary>
+        /// <param name="id"><c>Vertex</c> id</param>
+        /// <returns> Vertex or null</returns>
         public Vertex FindVertex(int id)
         {
             return Vertices.Find((Vertex v) => v.Id == id);
         }
 
-        public void AddVertex()
+        /// <summary>
+        /// Add new <c>Vertex</c> to graph
+        /// </summary>
+        /// <param name="x">vertex x position</param>
+        /// <param name="y">vartex y position</param>
+        public void AddVertex(int x, int y)
         {
             Vertices.Add(new Vertex() {
-                X = randomizer.Next(1, 100),
-                Y = randomizer.Next(1, 100),
+                X = x,
+                Y = y,
                 Color = 0
             });
         }
 
+        /// <summary>
+        /// Remove vertex from graph.
+        /// </summary>
+        /// <param name="vertex">Vertex to remove</param>
         public void RemoveVertex(Vertex vertex)
         {
             foreach(var connection in vertex.Connections)
@@ -40,11 +56,21 @@ namespace GraphApp
             Vertices.Remove(vertex);
         }
 
+        /// <summary>
+        /// Find <c>Connection</c> by given id
+        /// </summary>
+        /// <param name="id">Connection id</param>
+        /// <returns>Connection or null</returns>
         public Connection FindConnection(int id)
         {
             return Connections.Find((Connection c) => c.Id == id);
         }
 
+        /// <summary>
+        /// Add new connection to graph.
+        /// </summary>
+        /// <param name="begin">Connection's begining vertex</param>
+        /// <param name="end">Connection's end vertex</param>
         public void AddConnection(Vertex begin, Vertex end)
         {
             var connection = new Connection()
@@ -58,6 +84,10 @@ namespace GraphApp
             end.Connections.Add(connection);
         }
 
+        /// <summary>
+        /// Remove Connection from graph
+        /// </summary>
+        /// <param name="connection">Connection to remove</param>
         public void RemoveConnection(Connection connection)
         {
             Connections.Remove(connection);

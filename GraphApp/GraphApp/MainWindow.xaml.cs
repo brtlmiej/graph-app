@@ -20,9 +20,15 @@ namespace GraphApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        Graph graph;
         public MainWindow()
         {
+            graph = new Graph();
             InitializeComponent();
+        }
+
+        private void AddVertex_Click(object sender, SelectionChangedEventArgs e)
+        {
         }
     }
 }
