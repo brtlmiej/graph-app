@@ -34,13 +34,17 @@ namespace GraphApp
         /// </summary>
         /// <param name="x">vertex x position</param>
         /// <param name="y">vartex y position</param>
-        public void AddVertex(int x, int y)
+        /// <returns>new vertex</returns>
+        public Vertex AddVertex(int x, int y)
         {
-            Vertices.Add(new Vertex() {
+            var vertex = new Vertex()
+            {
                 X = x,
                 Y = y,
                 Color = 0
-            });
+            };
+            Vertices.Add(vertex);
+            return vertex;
         }
 
         /// <summary>
@@ -71,7 +75,8 @@ namespace GraphApp
         /// </summary>
         /// <param name="begin">Connection's begining vertex</param>
         /// <param name="end">Connection's end vertex</param>
-        public void AddConnection(Vertex begin, Vertex end)
+        /// <returns>new connection</returns>
+        public Connection AddConnection(Vertex begin, Vertex end)
         {
             var connection = new Connection()
             {
@@ -82,6 +87,8 @@ namespace GraphApp
             Connections.Add(connection);
             begin.Connections.Add(connection);
             end.Connections.Add(connection);
+
+            return connection;
         }
 
         /// <summary>
