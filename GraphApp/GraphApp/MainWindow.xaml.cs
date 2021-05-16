@@ -37,7 +37,7 @@ namespace GraphApp
             var vertex = graphService.CreateVertex(
                 graph, Convert.ToInt32(drawBoard.Width), Convert.ToInt32(drawBoard.Height)
             );
-            drawService.DrawPoint(vertex);
+            drawService.DrawVertex(vertex);
         }
     }
 }

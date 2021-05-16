@@ -26,7 +26,7 @@ namespace GraphApp
 
         }
 
-        public void DrawPoint(Vertex vertex)
+        public void DrawVertex(Vertex vertex)
         {
             Ellipse ellipse = new Ellipse()
             {
@@ -34,13 +34,20 @@ namespace GraphApp
                 Height = DrawConstants.ELLIPSE_SIZE,
                 StrokeThickness = 1,
                 Stroke = Brushes.Black,
-                Fill = new SolidColorBrush(this.GetOrCreateColor(vertex.Id)),
+                Fill = new SolidColorBrush(this.GetOrCreateColor(vertex.Id))
             };
-
             Canvas.SetLeft(ellipse, vertex.X);
             Canvas.SetTop(ellipse, vertex.Y);
 
+            TextBlock txt = new TextBlock()
+            {
+                Text = vertex.Id.ToString()
+            };
+            Canvas.SetLeft(txt, vertex.X + (DrawConstants.ELLIPSE_SIZE/2));
+            Canvas.SetTop(txt, vertex.Y + DrawConstants.ELLIPSE_SIZE);
+
             canvas.Children.Add(ellipse);
+            canvas.Children.Add(txt);
         }
 
         public void DrawLine()

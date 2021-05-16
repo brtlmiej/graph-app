@@ -5,14 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GraphApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="564.429" Width="897.714">
+    <Grid Margin="0,0,2,-21">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="731*"/>
+            <ColumnDefinition Width="28*"/>
+            <ColumnDefinition Width="111*"/>
+            <ColumnDefinition Width="590*"/>
             <ColumnDefinition Width="61*"/>
         </Grid.ColumnDefinitions>
-        <Button Name="addVertex" Content="Dodaj wierzchołek" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Width="110" Click="AddVertex_Click"/>
-        <Canvas Name="drawBoard" HorizontalAlignment="Left" Height="377" Margin="271,32,0,0" VerticalAlignment="Top" Width="500" Grid.ColumnSpan="2"/>
+        <Button Name="addVertex" Content="Dodaj wierzchołek" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Width="115" Click="AddVertex_Click" Grid.Column="1" Height="26"/>
+        <Canvas Name="drawBoard" HorizontalAlignment="Left" Height="494" Margin="185,19,0,0" VerticalAlignment="Top" Width="526" Grid.ColumnSpan="2" Grid.Column="2"/>
 
     </Grid>
 </Window>
