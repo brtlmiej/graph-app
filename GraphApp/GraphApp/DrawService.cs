@@ -6,13 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Shapes;
+using GraphApp.Constants;
 
 namespace GraphApp
 {
     public class DrawService
     {
-        const int POINT_SIZE = 10;
-
         Canvas canvas;
         List<Color> colors;
         Random random;
@@ -31,12 +30,17 @@ namespace GraphApp
         {
             Ellipse ellipse = new Ellipse()
             {
-                Width = POINT_SIZE,
-                Height = POINT_SIZE,
+                Width = DrawConstants.ELLIPSE_SIZE,
+                Height = DrawConstants.ELLIPSE_SIZE,
                 StrokeThickness = 1,
                 Stroke = Brushes.Black,
-                Fill = new SolidColorBrush(this.GetOrCreateColor(vertex.Color)),
+                Fill = new SolidColorBrush(this.GetOrCreateColor(vertex.Id)),
             };
+
+            Canvas.SetLeft(ellipse, vertex.X);
+            Canvas.SetTop(ellipse, vertex.Y);
+
+            canvas.Children.Add(ellipse);
         }
 
         public void DrawLine()
@@ -46,7 +50,7 @@ namespace GraphApp
 
         private Color GetOrCreateColor(int index)
         {
-            if (colors.ElementAt(index) != null)
+            if (index >= 0 && index < colors.Count)
                 return colors[index];
             var color = Color.FromRgb(
                 Convert.ToByte(random.Next(150, 255)), Convert.ToByte(random.Next(150, 255)), Convert.ToByte(random.Next(150, 255))

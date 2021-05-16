@@ -12,7 +12,7 @@
             <ColumnDefinition Width="61*"/>
         </Grid.ColumnDefinitions>
         <Button Name="addVertex" Content="Dodaj wierzchołek" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Width="110" Click="AddVertex_Click"/>
-        <Canvas Name="drawBoard" HorizontalAlignment="Left" Height="390" Margin="256,19,0,0" VerticalAlignment="Top" Width="515" Grid.ColumnSpan="2"/>
+        <Canvas Name="drawBoard" HorizontalAlignment="Left" Height="377" Margin="271,32,0,0" VerticalAlignment="Top" Width="500" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>

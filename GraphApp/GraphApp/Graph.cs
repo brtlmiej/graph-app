@@ -19,46 +19,6 @@ namespace GraphApp
             Vertices = new List<Vertex>();
             Connections = new List<Connection>();
         }
-        /// <summary>
-        /// Find <c>Vertex</c> by given id
-        /// </summary>
-        /// <param name="id"><c>Vertex</c> id</param>
-        /// <returns> Vertex or null</returns>
-        public Vertex FindVertex(int id)
-        {
-            return Vertices.Find((Vertex v) => v.Id == id);
-        }
-
-        /// <summary>
-        /// Add new <c>Vertex</c> to graph
-        /// </summary>
-        /// <param name="x">vertex x position</param>
-        /// <param name="y">vartex y position</param>
-        /// <returns>new vertex</returns>
-        public Vertex AddVertex(int x, int y)
-        {
-            var vertex = new Vertex()
-            {
-                X = x,
-                Y = y,
-                Color = 0
-            };
-            Vertices.Add(vertex);
-            return vertex;
-        }
-
-        /// <summary>
-        /// Remove vertex from graph.
-        /// </summary>
-        /// <param name="vertex">Vertex to remove</param>
-        public void RemoveVertex(Vertex vertex)
-        {
-            foreach(var connection in vertex.Connections)
-            {
-                Connections.Remove(connection);
-            }
-            Vertices.Remove(vertex);
-        }
 
         /// <summary>
         /// Find <c>Connection</c> by given id
@@ -71,35 +31,13 @@ namespace GraphApp
         }
 
         /// <summary>
-        /// Add new connection to graph.
+        /// Find <c>Vertex</c> by given id
         /// </summary>
-        /// <param name="begin">Connection's begining vertex</param>
-        /// <param name="end">Connection's end vertex</param>
-        /// <returns>new connection</returns>
-        public Connection AddConnection(Vertex begin, Vertex end)
+        /// <param name="id"><c>Vertex</c> id</param>
+        /// <returns> Vertex or null</returns>
+        public Vertex FindVertex(int id)
         {
-            var connection = new Connection()
-            {
-                Begin = begin,
-                End = end
-            };
-
-            Connections.Add(connection);
-            begin.Connections.Add(connection);
-            end.Connections.Add(connection);
-
-            return connection;
-        }
-
-        /// <summary>
-        /// Remove Connection from graph
-        /// </summary>
-        /// <param name="connection">Connection to remove</param>
-        public void RemoveConnection(Connection connection)
-        {
-            Connections.Remove(connection);
-            connection.Begin.Connections.Remove(connection);
-            connection.End.Connections.Remove(connection);
+            return Vertices.Find((Vertex v) => v.Id == id);
         }
     }
 }

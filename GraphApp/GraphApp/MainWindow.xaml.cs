@@ -20,24 +20,22 @@ namespace GraphApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        const int CANVAS_MARGIN = 20;
 
         Graph graph;
-        Random randomizer;
         DrawService drawService;
+        GraphService graphService;
         public MainWindow()
         {
-            graph = new Graph();
-            randomizer = new Random();
-            drawService = new DrawService(drawBoard);
             InitializeComponent();
+            graph = new Graph();
+            drawService = new DrawService(drawBoard);
+            graphService = new GraphService();
         }
 
-        private void AddVertex_Click(object sender, SelectionChangedEventArgs e)
+        private void AddVertex_Click(object sender, RoutedEventArgs e)
         {
-            var vertex = graph.AddVertex(
-                randomizer.Next(CANVAS_MARGIN, Convert.ToInt32(drawBoard.Width) - CANVAS_MARGIN),
-                randomizer.Next(CANVAS_MARGIN, Convert.ToInt32(drawBoard.Height) - CANVAS_MARGIN)
+            var vertex = graphService.CreateVertex(
+                graph, Convert.ToInt32(drawBoard.Width), Convert.ToInt32(drawBoard.Height)
             );
             drawService.DrawPoint(vertex);
         }
