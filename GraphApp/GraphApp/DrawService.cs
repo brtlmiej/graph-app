@@ -32,12 +32,13 @@ namespace GraphApp
             {
                 Width = DrawConstants.ELLIPSE_SIZE,
                 Height = DrawConstants.ELLIPSE_SIZE,
-                StrokeThickness = 1,
+                StrokeThickness = 2,
                 Stroke = Brushes.Black,
-                Fill = new SolidColorBrush(this.GetOrCreateColor(vertex.Id))
+                Fill = new SolidColorBrush(this.GetOrCreateColor(vertex.Color))
             };
             Canvas.SetLeft(ellipse, vertex.X);
             Canvas.SetTop(ellipse, vertex.Y);
+            Canvas.SetZIndex(ellipse, 2);
 
             TextBlock txt = new TextBlock()
             {
@@ -45,14 +46,26 @@ namespace GraphApp
             };
             Canvas.SetLeft(txt, vertex.X + (DrawConstants.ELLIPSE_SIZE/2));
             Canvas.SetTop(txt, vertex.Y + DrawConstants.ELLIPSE_SIZE);
+            Canvas.SetZIndex(txt, 3);
 
             canvas.Children.Add(ellipse);
             canvas.Children.Add(txt);
         }
 
-        public void DrawLine()
+        public void DrawConnection(Connection connection)
         {
+            Line line = new Line()
+            { 
+                X1 = connection.Begin.X + (DrawConstants.ELLIPSE_SIZE / 2),
+                Y1 = connection.Begin.Y + (DrawConstants.ELLIPSE_SIZE / 2),
+                X2 = connection.End.X + (DrawConstants.ELLIPSE_SIZE / 2),
+                Y2 = connection.End.Y + (DrawConstants.ELLIPSE_SIZE / 2),
+                Stroke = Brushes.Black,
+                StrokeThickness = 2
+            };
+            Canvas.SetZIndex(line, 1);
 
+            canvas.Children.Add(line);
         }
 
         private Color GetOrCreateColor(int index)

@@ -9,14 +9,17 @@ namespace GraphApp
     /// <summary>
     /// Logical graph connection representation
     /// </summary>
-    public class Connection: BaseModel
+    public class Connection
     {
+        public int Id { get; set; }
         public Vertex Begin { get; set; }
         public Vertex End { get; set; }
+        static int AutoIncrement = 1;
 
-        public Connection(): base()
+        public Connection()
         {
-
+            Id = AutoIncrement;
+            AutoIncrement++;
         }
 
         /// <summary>

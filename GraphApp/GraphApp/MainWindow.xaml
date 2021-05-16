@@ -13,8 +13,11 @@
             <ColumnDefinition Width="590*"/>
             <ColumnDefinition Width="61*"/>
         </Grid.ColumnDefinitions>
-        <Button Name="addVertex" Content="Dodaj wierzchołek" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Width="115" Click="AddVertex_Click" Grid.Column="1" Height="26"/>
+        <Button Name="addVertex" Content="Dodaj wierzchołek" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Width="134" Click="AddVertex_Click" Grid.Column="1" Height="26" Grid.ColumnSpan="2"/>
         <Canvas Name="drawBoard" HorizontalAlignment="Left" Height="494" Margin="185,19,0,0" VerticalAlignment="Top" Width="526" Grid.ColumnSpan="2" Grid.Column="2"/>
+        <Button x:Name="addConnection" Content="Dodaj połączenie" HorizontalAlignment="Left" Margin="10,195,0,0" VerticalAlignment="Top" Width="134" Click="AddConnection_Click" Grid.Column="1" Height="26" Grid.ColumnSpan="2"/>
+        <ListBox Name="selectVertex1" Grid.Column="2" HorizontalAlignment="Left" Height="100" Margin="59,195,0,0" VerticalAlignment="Top" Width="100"/>
+        <ListBox Name="selectVertex2" Grid.Column="2" HorizontalAlignment="Left" Height="100" Margin="59,324,0,0" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Window>

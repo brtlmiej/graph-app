@@ -9,7 +9,7 @@ namespace GraphApp
     /// <summary>
     /// Logical graph representation
     /// </summary>
-    public class Graph: BaseModel
+    public class Graph
     {
         public List<Vertex> Vertices { get; set; }
         public List<Connection> Connections { get; set; }

@@ -61,7 +61,7 @@ namespace GraphApp
         /// <param name="begin">Connection's begining vertex</param>
         /// <param name="end">Connection's end vertex</param>
         /// <returns>new connection</returns>
-        public Connection AddConnection(Graph graph, Vertex begin, Vertex end)
+        public Connection CreateConnection(Graph graph, Vertex begin, Vertex end)
         {
             var connection = new Connection()
             {

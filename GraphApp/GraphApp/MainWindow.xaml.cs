@@ -30,6 +30,7 @@ namespace GraphApp
             graph = new Graph();
             drawService = new DrawService(drawBoard);
             graphService = new GraphService();
+            InitializeVerticesLists();
         }
 
         private void AddVertex_Click(object sender, RoutedEventArgs e)
@@ -38,6 +39,19 @@ namespace GraphApp
                 graph, Convert.ToInt32(drawBoard.Width), Convert.ToInt32(drawBoard.Height)
             );
             drawService.DrawVertex(vertex);
+            InitializeVerticesLists();
+        }
+
+        private void AddConnection_Click(object sender, RoutedEventArgs e)
+        {
+            var connection = graphService.CreateConnection(graph, graph.Vertices[0], graph.Vertices[1]);
+            drawService.DrawConnection(connection);
+        }
+
+        private void InitializeVerticesLists()
+        {
+            selectVertex1.ItemsSource = graph.Vertices;
+            selectVertex2.ItemsSource = graph.Vertices;
         }
     }
 }
