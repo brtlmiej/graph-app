@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GraphApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="564.429" Width="897.714">
+        Title="GraphApp" Height="564.429" Width="897.714">
     <Grid Margin="0,0,2,-21">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="28*"/>
