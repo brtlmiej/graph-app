@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,13 +12,13 @@ namespace GraphApp
     /// </summary>
     public class Graph
     {
-        public List<Vertex> Vertices { get; set; }
-        public List<Connection> Connections { get; set; }
+        public ObservableCollection<Vertex> Vertices { get; set; }
+        public ObservableCollection<Connection> Connections { get; set; }
 
         public Graph(): base()
         {
-            Vertices = new List<Vertex>();
-            Connections = new List<Connection>();
+            Vertices = new ObservableCollection<Vertex>();
+            Connections = new ObservableCollection<Connection>();
         }
 
         /// <summary>
@@ -27,7 +28,7 @@ namespace GraphApp
         /// <returns>Connection or null</returns>
         public Connection FindConnection(int id)
         {
-            return Connections.Find((Connection c) => c.Id == id);
+            return Connections.Where((Connection c) => c.Id == id).FirstOrDefault();
         }
 
         /// <summary>
@@ -37,7 +38,7 @@ namespace GraphApp
         /// <returns> Vertex or null</returns>
         public Vertex FindVertex(int id)
         {
-            return Vertices.Find((Vertex v) => v.Id == id);
+            return Vertices.Where((Vertex v) => v.Id == id).FirstOrDefault();
         }
     }
 }

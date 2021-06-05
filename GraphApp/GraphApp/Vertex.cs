@@ -24,6 +24,12 @@ namespace GraphApp
             Connections = new List<Connection>();
         }
 
+        public bool ConnectionWithVertexExists(Vertex v)
+        {
+            var connection = Connections.Find(c => c.Includes(v) && c.Includes(this));
+            return connection != null;
+        }
+
         /// <summary>
         /// Get all Vertices that are connected to this <c>Vertex</c>
         /// </summary>

@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace GraphApp
 {
     /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
+    /// Logical interaction with MainWindow class
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -24,6 +24,7 @@ namespace GraphApp
         Graph graph;
         DrawService drawService;
         GraphService graphService;
+        bool validationErrorThrown = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -35,23 +36,61 @@ namespace GraphApp
 
         private void AddVertex_Click(object sender, RoutedEventArgs e)
         {
+            ClearError();
+
             var vertex = graphService.CreateVertex(
                 graph, Convert.ToInt32(drawBoard.Width), Convert.ToInt32(drawBoard.Height)
             );
             drawService.DrawVertex(vertex);
-            InitializeVerticesLists();
         }
 
         private void AddConnection_Click(object sender, RoutedEventArgs e)
         {
-            var connection = graphService.CreateConnection(graph, graph.Vertices[0], graph.Vertices[1]);
-            drawService.DrawConnection(connection);
+            ClearError();
+
+            if (selectVertex1.SelectedItem == null || selectVertex2.SelectedItem == null)
+            {
+                ThrowError("Please select vertex.");
+            } 
+            else if (selectVertex1.SelectedItem == selectVertex2.SelectedItem)
+            {
+                ThrowError("Incorrect vertex selected.");
+            }
+            else if ((selectVertex1.SelectedItem as Vertex).ConnectionWithVertexExists(selectVertex2.SelectedItem as Vertex))
+            {
+                ThrowError("Connection already exists.");
+            }
+            else
+            {
+                var connection = graphService.CreateConnection(
+                    graph,
+                    selectVertex1.SelectedItem as Vertex,
+                    selectVertex2.SelectedItem as Vertex
+                );
+
+                drawService.DrawConnection(connection);
+            }
         }
 
         private void InitializeVerticesLists()
         {
             selectVertex1.ItemsSource = graph.Vertices;
             selectVertex2.ItemsSource = graph.Vertices;
+        }
+
+        private void ThrowError(string message)
+        {
+            validationErrorThrown = true;
+            errorBlock.Text = message;
+        }
+
+        private void ClearError()
+        {
+            if(validationErrorThrown)
+            {
+                validationErrorThrown = false;
+                errorBlock.Text = "";
+            }
         }
     }
 }

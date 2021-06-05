@@ -60,7 +60,7 @@ namespace GraphApp
                 Y1 = connection.Begin.Y + (DrawConstants.ELLIPSE_SIZE / 2),
                 X2 = connection.End.X + (DrawConstants.ELLIPSE_SIZE / 2),
                 Y2 = connection.End.Y + (DrawConstants.ELLIPSE_SIZE / 2),
-                Stroke = Brushes.Black,
+                Stroke = Brushes.Gray,
                 StrokeThickness = 2
             };
             Canvas.SetZIndex(line, 1);
