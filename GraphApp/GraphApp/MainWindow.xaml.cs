@@ -117,8 +117,7 @@ namespace GraphApp
             var usedColors = graphService.colorGraphWithBaseAlgorithm(graph);
             watch.Stop();
 
-            var elapsedMs = watch.ElapsedMilliseconds;
-            colorGraphTimeInfo.Content = "Czas wykonania: " + (elapsedMs / 1000.0).ToString() + " s";
+            colorGraphTimeInfo.Content = "Czas wykonania: " + watch.ElapsedMilliseconds.ToString() + " ms";
             colorGraphColorsInfo.Content = "Ilość użytych kolorów: " + usedColors.Distinct().Count().ToString();
 
             // draw colored graph
