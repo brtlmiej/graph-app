@@ -87,16 +87,82 @@ namespace GraphApp
             connection.End.Connections.Remove(connection);
         }
 
+        /// <summary>
+        /// Color graph with base algorithm and get used colors
+        /// </summary>
+        /// <param name="graph">Graph</param>
+        /// <returns>list of colors numbers</returns>
         public List<int> colorGraphWithBaseAlgorithm(Graph graph)
         {
             List<int> usedColors = new List<int>();
             foreach(var vertice in graph.Vertices)
             {
-                if (vertice.Color != 0) continue;
-
                 int color = 1;
                 List<int> neighborColors = vertice.GetAllNeighbors().Select(n => n.Color).ToList();
                 while(true)
+                {
+                    if (!neighborColors.Contains(color))
+                        break;
+                    color++;
+                }
+                usedColors.Add(color);
+
+                vertice.Color = color;
+            }
+            return usedColors;
+        }
+
+
+        /// <summary>
+        /// Color graph with SLF algorithm and get used colors
+        /// </summary>
+        /// <param name="graph">Graph</param>
+        /// <returns>list of colors numbers</returns>
+        public List<int> colorGraphWithSLFAlgorithm(Graph graph)
+        {
+            List<int> usedColors = new List<int>();
+            var vertice = graph.Vertices
+                .Where(v => v.Color == 0)
+                .OrderByDescending(v => v.GetAllNeighbors().Select(n => n.Color).Distinct().ToList().Count)
+                .ThenByDescending(v => v.GetAllNeighbors().Count)
+                .FirstOrDefault();
+
+            while (vertice != null)
+            {
+                int color = 1;
+                List<int> neighborColors = vertice.GetAllNeighbors().Select(n => n.Color).ToList();
+                while (true)
+                {
+                    if (!neighborColors.Contains(color))
+                        break;
+                    color++;
+                }
+                usedColors.Add(color);
+
+                vertice.Color = color;
+                vertice = graph.Vertices
+                    .Where(v => v.Color == 0)
+                    .OrderByDescending(v => v.GetAllNeighbors().Select(n => n.Color).Distinct().ToList().Count)
+                    .ThenByDescending(v => v.GetAllNeighbors().Count)
+                    .FirstOrDefault();
+            }
+            return usedColors;
+        }
+
+
+        /// <summary>
+        /// Color graph with LF algorithm and get used colors
+        /// </summary>
+        /// <param name="graph">Graph</param>
+        /// <returns>list of colors numbers</returns>
+        public List<int> colorGraphWithLFAlgorithm(Graph graph)
+        {
+            List<int> usedColors = new List<int>();
+            foreach (var vertice in graph.Vertices.OrderByDescending(v => v.GetAllNeighbors().Count))
+            {
+                int color = 1;
+                List<int> neighborColors = vertice.GetAllNeighbors().Select(n => n.Color).ToList();
+                while (true)
                 {
                     if (!neighborColors.Contains(color))
                         break;
