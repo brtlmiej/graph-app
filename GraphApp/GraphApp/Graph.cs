@@ -21,6 +21,12 @@ namespace GraphApp
             Connections = new ObservableCollection<Connection>();
         }
 
+        public void Clear()
+        {
+            Vertices.Clear();
+            Connections.Clear();
+        }
+
         /// <summary>
         /// Find <c>Connection</c> by given id
         /// </summary>

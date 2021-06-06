@@ -87,8 +87,9 @@ namespace GraphApp
             connection.End.Connections.Remove(connection);
         }
 
-        public void colorGraphWithBaseAlgorithm(Graph graph)
+        public List<int> colorGraphWithBaseAlgorithm(Graph graph)
         {
+            List<int> usedColors = new List<int>();
             foreach(var vertice in graph.Vertices)
             {
                 if (vertice.Color != 0) continue;
@@ -101,8 +102,18 @@ namespace GraphApp
                         break;
                     color++;
                 }
+                usedColors.Add(color);
 
                 vertice.Color = color;
+            }
+            return usedColors;
+        }
+
+        public void ClearGraphVerticesColors(Graph graph)
+        {
+            foreach(var vertex in graph.Vertices)
+            {
+                vertex.Color = 0;
             }
         }
 

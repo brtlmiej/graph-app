@@ -92,5 +92,38 @@ namespace GraphApp
                 errorBlock.Text = "";
             }
         }
+
+        private void DeleteGraph_Click(object sender, RoutedEventArgs e)
+        {
+            ClearError();
+            graph.Clear();
+            drawBoard.Children.Clear();
+        }
+
+        private void ColorGraph_Click(object sender, RoutedEventArgs e)
+        {
+            ClearError();
+            if (graph.Vertices.Count == 0)
+            {
+                ThrowError("Graf jest pusty");
+                return;
+            }
+
+            // clear graph colors
+            graphService.ClearGraphVerticesColors(graph);
+
+            // run graph color algorithm and count time of work
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+            var usedColors = graphService.colorGraphWithBaseAlgorithm(graph);
+            watch.Stop();
+
+            var elapsedMs = watch.ElapsedMilliseconds;
+            colorGraphTimeInfo.Content = "Czas wykonania: " + (elapsedMs / 1000.0).ToString() + " s";
+            colorGraphColorsInfo.Content = "Ilość użytych kolorów: " + usedColors.Distinct().Count().ToString();
+
+            // draw colored graph
+            drawBoard.Children.Clear();
+            drawService.DrawGraph(graph);
+        }
     }
 }
