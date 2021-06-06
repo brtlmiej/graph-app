@@ -50,15 +50,15 @@ namespace GraphApp
 
             if (selectVertex1.SelectedItem == null || selectVertex2.SelectedItem == null)
             {
-                ThrowError("Please select vertex.");
+                ThrowError("Proszę wybrać wierzchołek");
             } 
             else if (selectVertex1.SelectedItem == selectVertex2.SelectedItem)
             {
-                ThrowError("Incorrect vertex selected.");
+                ThrowError("Wybrano nieprawidłowy wierzchołek");
             }
             else if ((selectVertex1.SelectedItem as Vertex).ConnectionWithVertexExists(selectVertex2.SelectedItem as Vertex))
             {
-                ThrowError("Connection already exists.");
+                ThrowError("Wybrane połącze nie już istnieje");
             }
             else
             {

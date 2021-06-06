@@ -23,7 +23,15 @@ namespace GraphApp
         }
         public void DrawGraph(Graph graph)
         {
+            foreach(var vertex in graph.Vertices)
+            {
+                DrawVertex(vertex);
+            }
 
+            foreach(var connection in graph.Connections)
+            {
+                DrawConnection(connection);
+            }
         }
 
         public void DrawVertex(Vertex vertex)

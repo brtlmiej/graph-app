@@ -1,9 +1,10 @@
-﻿<Window x:Class="GraphApp.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GraphApp"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="GraphApp.MainWindow"
         mc:Ignorable="d"
         Title="GraphApp" Height="564.429" Width="897.714">
     <Grid Margin="0,0,2,-21">
@@ -13,12 +14,20 @@
             <ColumnDefinition Width="590*"/>
             <ColumnDefinition Width="61*"/>
         </Grid.ColumnDefinitions>
-        <Button Name="addVertex" Content="Dodaj wierzchołek" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Width="300" Click="AddVertex_Click" Grid.Column="1" Height="26" Grid.ColumnSpan="2"/>
-        <Canvas Name="drawBoard" HorizontalAlignment="Left" Height="494" Margin="204,19,0,0" VerticalAlignment="Top" Width="507" Grid.ColumnSpan="2" Grid.Column="2"/>
-        <Button x:Name="addConnection" Content="Dodaj połączenie" HorizontalAlignment="Left" Margin="10,327,0,0" VerticalAlignment="Top" Width="300" Click="AddConnection_Click" Grid.Column="1" Height="26" Grid.ColumnSpan="2" RenderTransformOrigin="0.488,0.429"/>
-        <ListBox Name="selectVertex1" Grid.Column="2" HorizontalAlignment="Left" Height="214" Margin="53,96,0,0" VerticalAlignment="Top" Width="132" ItemsSource="{Binding}" RenderTransformOrigin="-0.339,1.74"/>
-        <ListBox Name="selectVertex2" Grid.Column="1" HorizontalAlignment="Left" Height="214" Margin="10,96,0,0" VerticalAlignment="Top" Width="129" ItemsSource="{Binding}" Grid.ColumnSpan="2" RenderTransformOrigin="0.509,-0.941"/>
-        <TextBlock x:Name="errorBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="15,399,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="114" Width="290" Grid.ColumnSpan="2" Foreground="Red" FontSize="14"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="533" Stroke="Black" VerticalAlignment="Top" Width="364" Grid.ColumnSpan="3"/>
+
+        <Button x:Name="addVertex" Content="Dodaj wierzchołek" HorizontalAlignment="Left" Margin="0,71,0,0" VerticalAlignment="Top" Width="300" Click="AddVertex_Click" Grid.Column="1" Height="26" Grid.ColumnSpan="2"/>
+        <Canvas x:Name="drawBoard" HorizontalAlignment="Left" Height="494" Margin="223,19,0,0" VerticalAlignment="Top" Width="488" Grid.ColumnSpan="2" Grid.Column="2"/>
+        <Button x:Name="addConnection" Content="Dodaj połączenie" HorizontalAlignment="Left" Margin="0,274,0,0" VerticalAlignment="Top" Width="300" Click="AddConnection_Click" Grid.Column="1" Height="26" Grid.ColumnSpan="2" RenderTransformOrigin="0.488,0.429"/>
+        <TextBlock x:Name="errorBlock" Grid.Column="1" HorizontalAlignment="Left" Margin="0,466,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="37" Width="300" Grid.ColumnSpan="2" Foreground="Red" FontSize="14"/>
+        <Label Content="Początek połączenia" HorizontalAlignment="Left" Margin="27,190,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="129"/>
+        <Label Content="Koniec połączenia" Grid.Column="2" HorizontalAlignment="Left" Margin="41,190,0,0" VerticalAlignment="Top" Width="134"/>
+        <ComboBox x:Name="selectVertex1" Grid.Column="2" HorizontalAlignment="Left" Margin="46,219,0,0" VerticalAlignment="Top" Width="134"/>
+        <ComboBox x:Name="selectVertex2" Grid.Column="1" HorizontalAlignment="Left" Margin="0,219,0,0" VerticalAlignment="Top" Width="134" Grid.ColumnSpan="2"/>
+        <Label Content="Wierzchołki" HorizontalAlignment="Left" Margin="27,19,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="129" FontWeight="Bold" FontSize="20"/>
+        <Label Content="Połączenia" HorizontalAlignment="Left" Margin="27,140,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="129" FontWeight="Bold" FontSize="20"/>
+        <Button x:Name="addVertex_Copy" Content="Pokoloruj graf" HorizontalAlignment="Left" Margin="0,402,0,0" VerticalAlignment="Top" Width="300" Grid.Column="1" Height="26" Grid.ColumnSpan="2"/>
+        <Label Content="Kolorowanie grafu" HorizontalAlignment="Left" Margin="27,350,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="237" FontWeight="Bold" FontSize="20"/>
 
     </Grid>
 </Window>

@@ -87,6 +87,25 @@ namespace GraphApp
             connection.End.Connections.Remove(connection);
         }
 
+        public void colorGraphWithBaseAlgorithm(Graph graph)
+        {
+            foreach(var vertice in graph.Vertices)
+            {
+                if (vertice.Color != 0) continue;
+
+                int color = 1;
+                List<int> neighborColors = vertice.GetAllNeighbors().Select(n => n.Color).ToList();
+                while(true)
+                {
+                    if (!neighborColors.Contains(color))
+                        break;
+                    color++;
+                }
+
+                vertice.Color = color;
+            }
+        }
+
         private bool isValidPosition(Graph graph, int xPos, int yPos)
         {
             foreach(var vertex in graph.Vertices)
