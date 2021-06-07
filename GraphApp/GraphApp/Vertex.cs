@@ -9,15 +9,25 @@ namespace GraphApp
     /// <summary>
     /// Logical graph vertex representation
     /// </summary>
-    public class Vertex: BaseModel
+    public class Vertex
     {
+        public int Id { get; set; }
         public int X { get; set; }
         public int Y { get; set; }
         public int Color { get; set; }
         public List<Connection> Connections { get; set; }
-        public Vertex(): base()
+        static int AutoIncrement = 1;
+        public Vertex()
         {
+            Id = AutoIncrement;
+            AutoIncrement++;
             Connections = new List<Connection>();
+        }
+
+        public bool ConnectionWithVertexExists(Vertex v)
+        {
+            var connection = Connections.Find(c => c.Includes(v) && c.Includes(this));
+            return connection != null;
         }
 
         /// <summary>
@@ -33,6 +43,11 @@ namespace GraphApp
                 neighbors.Add(connection.Neighbor(this));
             }
             return neighbors;
+        }
+
+        public override string ToString()
+        {
+            return "wierzchołek " + Id;
         }
     }
 }

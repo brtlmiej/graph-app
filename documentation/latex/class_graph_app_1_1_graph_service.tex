@@ -1,0 +1,152 @@
+\hypertarget{class_graph_app_1_1_graph_service}{}\doxysection{Graph\+App.\+Graph\+Service Class Reference}
+\label{class_graph_app_1_1_graph_service}\index{GraphApp.GraphService@{GraphApp.GraphService}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}} \mbox{\hyperlink{class_graph_app_1_1_graph_service_afb0cdd6bf69345feab04428516e22b06}{Create\+Vertex}} (\mbox{\hyperlink{class_graph_app_1_1_graph}{Graph}} graph, int max\+Width, int max\+Height)
+\begin{DoxyCompactList}\small\item\em Create new {\ttfamily \mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}}} and add it to graph \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graph_app_1_1_graph_service_a00fdecbfcee50c97aa8c242e22beaf91}{Remove\+Vertex}} (\mbox{\hyperlink{class_graph_app_1_1_graph}{Graph}} graph, \mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}} vertex)
+\begin{DoxyCompactList}\small\item\em Remove vertex from graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_graph_app_1_1_connection}{Connection}} \mbox{\hyperlink{class_graph_app_1_1_graph_service_a53d518628546137786a8a1ed78489f78}{Create\+Connection}} (\mbox{\hyperlink{class_graph_app_1_1_graph}{Graph}} graph, \mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}} begin, \mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}} end)
+\begin{DoxyCompactList}\small\item\em Add new connection to graph. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_graph_app_1_1_graph_service_a7367e2971120613df64ac19721a6d616}{Remove\+Connection}} (\mbox{\hyperlink{class_graph_app_1_1_graph}{Graph}} graph, \mbox{\hyperlink{class_graph_app_1_1_connection}{Connection}} connection)
+\begin{DoxyCompactList}\small\item\em Remove \mbox{\hyperlink{class_graph_app_1_1_connection}{Connection}} from graph \end{DoxyCompactList}\item 
+List$<$ int $>$ \mbox{\hyperlink{class_graph_app_1_1_graph_service_a8c9919cef9db3150ea57553e0d1e3e23}{color\+Graph\+With\+Base\+Algorithm}} (\mbox{\hyperlink{class_graph_app_1_1_graph}{Graph}} graph)
+\begin{DoxyCompactList}\small\item\em Color graph with base algorithm and get used colors \end{DoxyCompactList}\item 
+List$<$ int $>$ \mbox{\hyperlink{class_graph_app_1_1_graph_service_a28b88df16e2775b82b8dbc49ccc00b00}{color\+Graph\+With\+SLFAlgorithm}} (\mbox{\hyperlink{class_graph_app_1_1_graph}{Graph}} graph)
+\begin{DoxyCompactList}\small\item\em Color graph with SLF algorithm and get used colors \end{DoxyCompactList}\item 
+List$<$ int $>$ \mbox{\hyperlink{class_graph_app_1_1_graph_service_ade091d9bf467bc93722800eafa535620}{color\+Graph\+With\+LFAlgorithm}} (\mbox{\hyperlink{class_graph_app_1_1_graph}{Graph}} graph)
+\begin{DoxyCompactList}\small\item\em Color graph with LF algorithm and get used colors \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_graph_app_1_1_graph_service_a6076d5a125aab6002f4a4529c9cc04d2}\label{class_graph_app_1_1_graph_service_a6076d5a125aab6002f4a4529c9cc04d2}} 
+void {\bfseries Clear\+Graph\+Vertices\+Colors} (\mbox{\hyperlink{class_graph_app_1_1_graph}{Graph}} graph)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_graph_app_1_1_graph_service_a8c9919cef9db3150ea57553e0d1e3e23}\label{class_graph_app_1_1_graph_service_a8c9919cef9db3150ea57553e0d1e3e23}} 
+\index{GraphApp.GraphService@{GraphApp.GraphService}!colorGraphWithBaseAlgorithm@{colorGraphWithBaseAlgorithm}}
+\index{colorGraphWithBaseAlgorithm@{colorGraphWithBaseAlgorithm}!GraphApp.GraphService@{GraphApp.GraphService}}
+\doxysubsubsection{\texorpdfstring{colorGraphWithBaseAlgorithm()}{colorGraphWithBaseAlgorithm()}}
+{\footnotesize\ttfamily List$<$int$>$ Graph\+App.\+Graph\+Service.\+color\+Graph\+With\+Base\+Algorithm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graph_app_1_1_graph}{Graph}}}]{graph }\end{DoxyParamCaption})}
+
+
+
+Color graph with base algorithm and get used colors 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & \mbox{\hyperlink{class_graph_app_1_1_graph}{Graph}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list of colors numbers
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_app_1_1_graph_service_ade091d9bf467bc93722800eafa535620}\label{class_graph_app_1_1_graph_service_ade091d9bf467bc93722800eafa535620}} 
+\index{GraphApp.GraphService@{GraphApp.GraphService}!colorGraphWithLFAlgorithm@{colorGraphWithLFAlgorithm}}
+\index{colorGraphWithLFAlgorithm@{colorGraphWithLFAlgorithm}!GraphApp.GraphService@{GraphApp.GraphService}}
+\doxysubsubsection{\texorpdfstring{colorGraphWithLFAlgorithm()}{colorGraphWithLFAlgorithm()}}
+{\footnotesize\ttfamily List$<$int$>$ Graph\+App.\+Graph\+Service.\+color\+Graph\+With\+LFAlgorithm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graph_app_1_1_graph}{Graph}}}]{graph }\end{DoxyParamCaption})}
+
+
+
+Color graph with LF algorithm and get used colors 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & \mbox{\hyperlink{class_graph_app_1_1_graph}{Graph}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list of colors numbers
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_app_1_1_graph_service_a28b88df16e2775b82b8dbc49ccc00b00}\label{class_graph_app_1_1_graph_service_a28b88df16e2775b82b8dbc49ccc00b00}} 
+\index{GraphApp.GraphService@{GraphApp.GraphService}!colorGraphWithSLFAlgorithm@{colorGraphWithSLFAlgorithm}}
+\index{colorGraphWithSLFAlgorithm@{colorGraphWithSLFAlgorithm}!GraphApp.GraphService@{GraphApp.GraphService}}
+\doxysubsubsection{\texorpdfstring{colorGraphWithSLFAlgorithm()}{colorGraphWithSLFAlgorithm()}}
+{\footnotesize\ttfamily List$<$int$>$ Graph\+App.\+Graph\+Service.\+color\+Graph\+With\+SLFAlgorithm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graph_app_1_1_graph}{Graph}}}]{graph }\end{DoxyParamCaption})}
+
+
+
+Color graph with SLF algorithm and get used colors 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & \mbox{\hyperlink{class_graph_app_1_1_graph}{Graph}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list of colors numbers
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_app_1_1_graph_service_a53d518628546137786a8a1ed78489f78}\label{class_graph_app_1_1_graph_service_a53d518628546137786a8a1ed78489f78}} 
+\index{GraphApp.GraphService@{GraphApp.GraphService}!CreateConnection@{CreateConnection}}
+\index{CreateConnection@{CreateConnection}!GraphApp.GraphService@{GraphApp.GraphService}}
+\doxysubsubsection{\texorpdfstring{CreateConnection()}{CreateConnection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_graph_app_1_1_connection}{Connection}} Graph\+App.\+Graph\+Service.\+Create\+Connection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graph_app_1_1_graph}{Graph}}}]{graph,  }\item[{\mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}}}]{begin,  }\item[{\mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}}}]{end }\end{DoxyParamCaption})}
+
+
+
+Add new connection to graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em begin} & \mbox{\hyperlink{class_graph_app_1_1_connection}{Connection}}\textquotesingle{}s begining vertex\\
+\hline
+{\em end} & \mbox{\hyperlink{class_graph_app_1_1_connection}{Connection}}\textquotesingle{}s end vertex\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new connection
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_app_1_1_graph_service_afb0cdd6bf69345feab04428516e22b06}\label{class_graph_app_1_1_graph_service_afb0cdd6bf69345feab04428516e22b06}} 
+\index{GraphApp.GraphService@{GraphApp.GraphService}!CreateVertex@{CreateVertex}}
+\index{CreateVertex@{CreateVertex}!GraphApp.GraphService@{GraphApp.GraphService}}
+\doxysubsubsection{\texorpdfstring{CreateVertex()}{CreateVertex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}} Graph\+App.\+Graph\+Service.\+Create\+Vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graph_app_1_1_graph}{Graph}}}]{graph,  }\item[{int}]{max\+Width,  }\item[{int}]{max\+Height }\end{DoxyParamCaption})}
+
+
+
+Create new {\ttfamily \mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}}} and add it to graph 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & \mbox{\hyperlink{class_graph_app_1_1_graph}{Graph}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new vertex
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_app_1_1_graph_service_a7367e2971120613df64ac19721a6d616}\label{class_graph_app_1_1_graph_service_a7367e2971120613df64ac19721a6d616}} 
+\index{GraphApp.GraphService@{GraphApp.GraphService}!RemoveConnection@{RemoveConnection}}
+\index{RemoveConnection@{RemoveConnection}!GraphApp.GraphService@{GraphApp.GraphService}}
+\doxysubsubsection{\texorpdfstring{RemoveConnection()}{RemoveConnection()}}
+{\footnotesize\ttfamily void Graph\+App.\+Graph\+Service.\+Remove\+Connection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graph_app_1_1_graph}{Graph}}}]{graph,  }\item[{\mbox{\hyperlink{class_graph_app_1_1_connection}{Connection}}}]{connection }\end{DoxyParamCaption})}
+
+
+
+Remove \mbox{\hyperlink{class_graph_app_1_1_connection}{Connection}} from graph 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connection} & \mbox{\hyperlink{class_graph_app_1_1_connection}{Connection}} to remove\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_graph_app_1_1_graph_service_a00fdecbfcee50c97aa8c242e22beaf91}\label{class_graph_app_1_1_graph_service_a00fdecbfcee50c97aa8c242e22beaf91}} 
+\index{GraphApp.GraphService@{GraphApp.GraphService}!RemoveVertex@{RemoveVertex}}
+\index{RemoveVertex@{RemoveVertex}!GraphApp.GraphService@{GraphApp.GraphService}}
+\doxysubsubsection{\texorpdfstring{RemoveVertex()}{RemoveVertex()}}
+{\footnotesize\ttfamily void Graph\+App.\+Graph\+Service.\+Remove\+Vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graph_app_1_1_graph}{Graph}}}]{graph,  }\item[{\mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}}}]{vertex }\end{DoxyParamCaption})}
+
+
+
+Remove vertex from graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex} & \mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}} to remove\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Graph\+App/\+Graph\+App/Graph\+Service.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,75 @@
+\hypertarget{class_graph_app_1_1_connection}{}\doxysection{Graph\+App.\+Connection Class Reference}
+\label{class_graph_app_1_1_connection}\index{GraphApp.Connection@{GraphApp.Connection}}
+
+
+Logical graph connection representation  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_graph_app_1_1_connection_a81f13fdd33e734a7c6678624ecd50dc5}{Includes}} (\mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}} vertex)
+\begin{DoxyCompactList}\small\item\em Check if \mbox{\hyperlink{class_graph_app_1_1_connection}{Connection}} includes given {\ttfamily \mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}}} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}} \mbox{\hyperlink{class_graph_app_1_1_connection_ac92a4626917d4ab0bcc5e1bbac85827a}{Neighbor}} (\mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}} vertex)
+\begin{DoxyCompactList}\small\item\em Get neighbor {\ttfamily \mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_graph_app_1_1_connection_a6c6227d911c5a7c336fd0862e19e221a}\label{class_graph_app_1_1_connection_a6c6227d911c5a7c336fd0862e19e221a}} 
+int {\bfseries Id}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_graph_app_1_1_connection_a085843b5fc167237554235bf49470256}\label{class_graph_app_1_1_connection_a085843b5fc167237554235bf49470256}} 
+\mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}} {\bfseries Begin}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_graph_app_1_1_connection_a20a67d028e8ba163c6088de993b374c1}\label{class_graph_app_1_1_connection_a20a67d028e8ba163c6088de993b374c1}} 
+\mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}} {\bfseries End}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Logical graph connection representation 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_graph_app_1_1_connection_a81f13fdd33e734a7c6678624ecd50dc5}\label{class_graph_app_1_1_connection_a81f13fdd33e734a7c6678624ecd50dc5}} 
+\index{GraphApp.Connection@{GraphApp.Connection}!Includes@{Includes}}
+\index{Includes@{Includes}!GraphApp.Connection@{GraphApp.Connection}}
+\doxysubsubsection{\texorpdfstring{Includes()}{Includes()}}
+{\footnotesize\ttfamily bool Graph\+App.\+Connection.\+Includes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}}}]{vertex }\end{DoxyParamCaption})}
+
+
+
+Check if \mbox{\hyperlink{class_graph_app_1_1_connection}{Connection}} includes given {\ttfamily \mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex} & \mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}} to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if connection includes given \mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}}, otherwise false
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_graph_app_1_1_connection_ac92a4626917d4ab0bcc5e1bbac85827a}\label{class_graph_app_1_1_connection_ac92a4626917d4ab0bcc5e1bbac85827a}} 
+\index{GraphApp.Connection@{GraphApp.Connection}!Neighbor@{Neighbor}}
+\index{Neighbor@{Neighbor}!GraphApp.Connection@{GraphApp.Connection}}
+\doxysubsubsection{\texorpdfstring{Neighbor()}{Neighbor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}} Graph\+App.\+Connection.\+Neighbor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}}}]{vertex }\end{DoxyParamCaption})}
+
+
+
+Get neighbor {\ttfamily \mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex} & \mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}} to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily \mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}}} or null value if connection doesn\textquotesingle{}t include given \mbox{\hyperlink{class_graph_app_1_1_vertex}{Vertex}}
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Graph\+App/\+Graph\+App/Connection.\+cs\end{DoxyCompactItemize}
